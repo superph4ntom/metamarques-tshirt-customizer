@@ -1,10 +1,5 @@
+import { IconCameraHeart, IconChevronLeft } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "framer-motion";
-import {
-  AiFillCamera,
-  AiOutlineArrowLeft,
-  AiOutlineHighlight,
-} from "react-icons/ai";
-import { RiSettingsLine } from "react-icons/ri";
 import { useSnapshot } from "valtio";
 import { state } from "./store";
 
@@ -31,7 +26,6 @@ export default function Overlay() {
         <h1 className="logo">
           Meta<span>Marques</span>
         </h1>
-        <RiSettingsLine size="3em" />
       </motion.header>
 
       <AnimatePresence>
@@ -44,8 +38,8 @@ export default function Overlay() {
 function Intro() {
   return (
     <motion.section {...sectionAnimation}>
-      <div className="section--container">
-        <div className="support--content">
+      <div className="section-container">
+        <div className="support-content">
           <p>
             Create your unique and exclusive <strong>crypto shirt</strong> with
             our brand-new customization tool.
@@ -54,7 +48,7 @@ function Intro() {
             style={{ background: "black" }}
             onClick={() => (state.intro = false)}
           >
-            Customize now <AiOutlineHighlight size="1.3em" />
+            customize now
           </button>
         </div>
       </div>
@@ -95,7 +89,7 @@ function Customizer() {
         </div>
 
         <div className="decals">
-          <div className="decals--container">
+          <div className="decals-container">
             {snap.decals.map((decal) => (
               <div
                 key={decal}
@@ -113,7 +107,8 @@ function Customizer() {
           style={{ background: snap.selectedColor }}
           onClick={downloadCanvas}
         >
-          DOWNLOAD <AiFillCamera size="1.3em" />
+          <IconCameraHeart />
+          DOWNLOAD
         </button>
 
         <button
@@ -121,7 +116,8 @@ function Customizer() {
           style={{ background: snap.selectedColor }}
           onClick={() => (state.intro = true)}
         >
-          GO BACK <AiOutlineArrowLeft size="1.3em" />
+          <IconChevronLeft />
+          GO BACK
         </button>
       </div>
     </motion.section>
