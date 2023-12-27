@@ -213,7 +213,8 @@ button:hover {
 
   .logo {
     font-size: 1.3rem;
-    margin: 2.4rem;
+    margin-top: 2.4rem;
+    margin-left: 8vw;
   }
 
   button {
