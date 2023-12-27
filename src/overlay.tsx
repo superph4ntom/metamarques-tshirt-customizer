@@ -1,11 +1,10 @@
-import { Logo } from "@pmndrs/branding";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   AiFillCamera,
   AiOutlineArrowLeft,
   AiOutlineHighlight,
-  AiOutlineShopping,
 } from "react-icons/ai";
+import { RiSettingsLine } from "react-icons/ri";
 import { useSnapshot } from "valtio";
 import { state } from "./store";
 
@@ -28,11 +27,11 @@ export default function Overlay() {
 
   return (
     <div className="container">
-      <motion.header {...headerAnimation}>
-        <Logo width="40" height="40" />
-        <div>
-          <AiOutlineShopping size="3em" />
-        </div>
+      <motion.header {...headerAnimation} className="header">
+        <h1 className="logo">
+          Meta<span>Marques</span>
+        </h1>
+        <RiSettingsLine size="3em" />
       </motion.header>
 
       <AnimatePresence>
@@ -55,7 +54,7 @@ function Intro() {
             style={{ background: "black" }}
             onClick={() => (state.intro = false)}
           >
-            CUSTOMIZE IT <AiOutlineHighlight size="1.3em" />
+            Customize now <AiOutlineHighlight size="1.3em" />
           </button>
         </div>
       </div>
