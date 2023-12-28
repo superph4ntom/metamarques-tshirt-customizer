@@ -115,6 +115,7 @@ button {
   font-family: "Inter";
   text-transform: uppercase;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:hover {
