@@ -114,6 +114,7 @@ button {
   padding: 15px 30px;
   font-family: "Inter";
   text-transform: uppercase;
+  user-select: none;
 }
 
 button:hover {
